@@ -1,0 +1,202 @@
+* {
+    font-family: "Jacques Francois", serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+nav {
+    background-color: #C3B18F !important;
+    color: white;
+
+}
+
+ .navbar-brand, .nav-link{
+    font-size: 1.5rem;
+    margin-right: 2em;
+    color: white;
+    
+}
+
+footer {
+    background-color: #C3B18F !important;
+    color: white;
+    
+    
+}
+
+.sdbm {
+    color: grey !important;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1.5em !important;
+}
+
+.para{
+    font-weight: 500;
+    font-size: 1.5em ;
+}
+
+.titre {
+    font-weight: 600;
+    font-size: 3em !important;
+    
+}
+
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; 
+}
+
+.accueilblock{
+    margin: 7rem;
+    margin-bottom: 28rem;
+}
+.lien-btn{
+    text-decoration: none; 
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-accueil1 {
+    color: rgb(255, 255, 255);
+    background-color: #c4a667;
+    border: 2px solid #807151;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.btn-accueil1:hover {
+    color: rgb(255, 255, 255);
+    background-color: #807151;
+    border: 2px solid #807151;
+    font-size: 1.2em;
+}
+
+.btn-accueil2 {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 2px solid #000000;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.btn-accueil2:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    font-size: 1.2em;
+}
+
+.btn-ajout {
+    color: rgb(255, 255, 255);
+    background-color: #c4a667;
+    border: 2px solid #c4a667;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.btn-ajout:hover {
+    color: rgb(255, 255, 255);
+    background-color: #807151;
+    border: 2px solid #807151;
+    font-size: 1.2em;
+}
+table>tbody> tr> td{
+    font-family: "Montserrat", sans-serif ;
+    width: fit-content;
+}
+
+.btn-ref {
+    color: rgb(255, 255, 255);
+    background-color: #c4a667;
+    border: 2px solid #c4a667;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.btn-ref:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 991px) {
+    
+    .accueilpara{
+        margin: 20px;
+    }
+    .accueilblock{
+        margin: 2rem;
+    }
+
+  
+}
+
+/* CSS pour les smartphones */
+@media only screen and (max-width: 768px) {
+    /* Cacher les cellules de données (th) */
+    .table-article th:nth-child(1),
+    .table-article th:nth-child(3),
+    .table-article th:nth-child(5),
+    .table-article th:nth-child(4) {
+        display: none;
+    }
+
+    /* Cacher les cellules de données (td) correspondantes dans chaque ligne */
+    .table-article td:nth-child(1),
+    .table-article td:nth-child(3),
+    .table-article td:nth-child(5),
+    .table-article td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Cacher les cellules de données (th) */
+    .table-marque th:nth-child(1),
+    .table-marque th:nth-child(3),
+    
+    .table-marque th:nth-child(4) {
+        display: none;
+    }
+
+    /* Cacher les cellules de données (td) correspondantes dans chaque ligne */
+    .table-marque td:nth-child(1),
+    .table-marque td:nth-child(3),
+    .table-marque td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Cacher les cellules de données (th) */
+    .table-pays th:nth-child(1),
+    .table-pays th:nth-child(3)
+     {
+        display: none;
+    }
+
+    /* Cacher les cellules de données (td) correspondantes dans chaque ligne */
+    .table-pays td:nth-child(1),
+    .table-pays td:nth-child(3)
+     {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Cacher les cellules de données (th) */
+    
+    .table-ticket th:nth-child(3)
+     {
+        display: none;
+    }
+
+    /* Cacher les cellules de données (td) correspondantes dans chaque ligne */
+    
+    .table-ticket td:nth-child(3)
+     {
+        display: none;
+    }
+}
