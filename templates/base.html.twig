@@ -21,7 +21,10 @@
         <script src="{{ asset('assets/js/script.js')}}" defer></script>
 	</head>
 	<body>
-		{% include "_partials/_nav.html.twig" %}
+    <header>
+    {% include "_partials/_nav.html.twig" %}
+    </header>
+		
 
 		{% block body %}{% endblock %}
 
