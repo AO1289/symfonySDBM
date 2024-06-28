@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'une couleur{% endblock %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mb-5 mt-5">Ajout d'une couleur</h1>
+
+    {{ include('couleur/_form.html.twig') }}
+
+    <a class="btn btn-warning" href="{{ path('app_couleur_index') }}">Retour à la liste</a>
+    </main>
+{% endblock %}
