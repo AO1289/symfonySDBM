@@ -3,15 +3,55 @@
 {% block title %}Accueil - Société Des Bières du Monde{% endblock %}
 
 {% block body %}
-
-
-<div class="example-wrapper">
-    <h1>Accueil</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/symfony/symfonySDBM/SDBMsymfony/src/Controller/MainController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/symfony/symfonySDBM/SDBMsymfony/templates/main/index.html.twig</code></li>
-    </ul>
+<main>
+<div class="d-flex flex-lg-row flex-column align-items-center justify-content-around accueilblock">
+<div class="accueilpara">
+<h1 class="titre mb-3">Bienvenue</h1>
+<div id="typewriter" class="sdbm">Société Des Bières du Monde</div>
+<p class="para">Sur ce site, vous découvrirez le projet qu'on a développé,<br> un
+gestionnaire de Bières ainsi que la gestion de ces références.</p>
+<div class="mt-5">
+<a class="lien-btn" href="{{ path('app_main') }}"><button class="btn btn-accueil1 ">Articles</button></a>
+<a class="lien-btn" href="{{ path('app_reference') }}"><button class="btn btn-accueil2">Références</button></a>
 </div>
+</div>
+
+<div class="imgbiere">
+    <img src="{{ asset('assets/img/biere.jpg')}}" alt="biere" class="responsive-img">
+</div>
+</div>
+</main>
+{% block javascripts %}
+
+<script>
+// Fonction pour l'animation de la machine à écrire
+        document.addEventListener('DOMContentLoaded', function() {
+        function typeWriter(text, elementId, delay = 140) {
+            let i = 0;
+            const element = document.getElementById(elementId);
+            if (!element) return;  // Si l'élément n'existe pas, sortir de la fonction
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '_';
+                    i++;
+                    setTimeout(type, delay);
+                } else {
+                    element.innerHTML = text;
+                    setTimeout(function() {
+                        i = 0;  // Réinitialisation de l'index
+                        type();  // Relancer l'animation
+                    }, 10000);  // Attendre 10 secondes avant de recommencer
+                }
+            }
+
+            type();
+        }
+
+        const textToType = 'Société Des Bières du Monde.';
+        typeWriter(textToType, 'typewriter');
+    });
+        </script>
+		{% endblock %}
+
 {% endblock %}
