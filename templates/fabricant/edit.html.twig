@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un Fabricant{% endblock %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mb-5 mt-5">Modification d'un Fabricant</h1>
+
+    {{ include('fabricant/_form.html.twig', {'button_label': 'Modifier'}) }}
+{{ include('fabricant/_delete_form.html.twig') }}
+    <a class="btn btn-warning mt-3 " href="{{ path('app_fabricant_index') }}">Retourner à la liste</a>
+</main>
+    
+{% endblock %}
