@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Fabricants{% endblock %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mt-5 mb-5">Gestion des Fabricants</h1>
+<a class="btn btn-ajout" href="{{ path('app_fabricant_new') }}">Ajouter</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fabricant in fabricants %}
+            <tr>
+                <td>{{ fabricant.id }}</td>
+                <td>{{ fabricant.nom }}</td>
+                <td>
+                    <a class="btn btn-primary mb-2" href="{{ path('app_fabricant_show', {'id': fabricant.id}) }}">Voir</a>
+                    <a class="btn btn-success mb-2" href="{{ path('app_fabricant_edit', {'id': fabricant.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Tableau vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </main>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Fabricant{% endblock %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mb-5 mt-5">Ajouter un Fabricant</h1>
+
+    {{ include('fabricant/_form.html.twig') }}
+
+    <a class="btn btn-warning" href="{{ path('app_fabricant_index') }}">Retourner à la liste</a>
+</main>
+{% endblock %}
