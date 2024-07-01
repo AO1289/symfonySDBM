@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TypeRepository;
+use App\Repository\TypebiereRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TypeRepository::class)]
-class Type
+#[ORM\Entity(repositoryClass: TypebiereRepository::class)]
+class Typebiere
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
