@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un Type de bière{% endblock %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mb-5 mt-5">Modification d'un Type de bière</h1>
+
+    {{ include('typebiere/_form.html.twig', {'button_label': 'Modifier'}) }}
+    {{ include('typebiere/_delete_form.html.twig') }}
+    <a class="btn btn-warning mt-3 " href="{{ path('app_typebiere_index') }}">Retourner à la liste</a>
+    </main>
+{% endblock %}
