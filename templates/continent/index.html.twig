@@ -5,7 +5,7 @@
 {% block body %}
 <main class="container vh-100">
     <h1 class="mt-5 mb-5">Gestion des Continents</h1>
-<a class="btn btn-ajout mb-3" href="{{ path('app_continent_new') }}">Create new</a>
+<a class="btn btn-ajout mb-3" href="{{ path('app_continent_new') }}">Ajouter</a>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -20,18 +20,16 @@
                 <td>{{ continent.id }}</td>
                 <td>{{ continent.nom }}</td>
                 <td>
-                    <a class="btn btn-primary mb-2" href="{{ path('app_continent_show', {'id': continent.id}) }}">show</a>
-                    <a class="btn btn-success mb-2" href="{{ path('app_continent_edit', {'id': continent.id}) }}">edit</a>
+                    <a class="btn btn-primary mb-2" href="{{ path('app_continent_show', {'id': continent.id}) }}">Voir</a>
+                    <a class="btn btn-success mb-2" href="{{ path('app_continent_edit', {'id': continent.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Tableau vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    
     </main>
 {% endblock %}
