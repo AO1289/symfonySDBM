@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\FabricantRepository;
+use App\Repository\PaysRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: FabricantRepository::class)]
-class Fabricant
+#[ORM\Entity(repositoryClass: PaysRepository::class)]
+class Pays
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,10 +18,14 @@ class Fabricant
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
+    #[ORM\ManyToOne(inversedBy: 'pays')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Continent $continent = null;
+
     /**
      * @var Collection<int, Marque>
      */
-    #[ORM\OneToMany(targetEntity: Marque::class, mappedBy: 'fabricant')]
+    #[ORM\OneToMany(targetEntity: Marque::class, mappedBy: 'pays')]
     private Collection $marques;
 
     public function __construct()
@@ -46,6 +50,18 @@ class Fabricant
         return $this;
     }
 
+    public function getContinent(): ?Continent
+    {
+        return $this->continent;
+    }
+
+    public function setContinent(?Continent $continent): static
+    {
+        $this->continent = $continent;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Marque>
      */
@@ -58,7 +74,7 @@ class Fabricant
     {
         if (!$this->marques->contains($marque)) {
             $this->marques->add($marque);
-            $marque->setFabricant($this);
+            $marque->setPays($this);
         }
 
         return $this;
@@ -68,8 +84,8 @@ class Fabricant
     {
         if ($this->marques->removeElement($marque)) {
             // set the owning side to null (unless already changed)
-            if ($marque->getFabricant() === $this) {
-                $marque->setFabricant(null);
+            if ($marque->getPays() === $this) {
+                $marque->setPays(null);
             }
         }
 
