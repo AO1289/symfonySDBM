@@ -3,7 +3,7 @@
 $migrationTables = array(
     array(
         "source" => array("vendre", array("ANNEE", "NUMERO_TICKET", "ID_ARTICLE", "QUANTITE", "PRIX_VENTE")),
-        "destination" => array("vendre", array("annee", "numero_ticket",  "article_id", "quantite", "prix_vente")),
+        "destination" => array("vendre", array("annee", "numero_ticket",  "article_id", "quantite", "prix")),
     ),
     // array(
     //     "source" => array("pays", array("ID_PAYS", "ID_CONTINENT", "NOM_PAYS")),
