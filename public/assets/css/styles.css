@@ -120,6 +120,9 @@ table>tbody> tr> td{
     margin-bottom: 10px;
 }
 
+.margebas {
+    margin-bottom: 40em ;
+}
 
 @media (max-width: 991px) {
     

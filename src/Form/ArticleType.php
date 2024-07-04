@@ -22,15 +22,21 @@ class ArticleType extends AbstractType
             ->add('titrage')
             ->add('marque', EntityType::class, [
                 'class' => Marque::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
+                'placeholder' => 'Ne pas spécifier', // Ajout de l'option "Ne pas spécifier"
+                'required' => false, // Permettre une valeur nulle
             ])
             ->add('couleur', EntityType::class, [
                 'class' => Couleur::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
+                'placeholder' => 'Ne pas spécifier', // Ajout de l'option "Ne pas spécifier"
+                'required' => false, // Permettre une valeur nulle
             ])
             ->add('type', EntityType::class, [
                 'class' => Typebiere::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
+                'placeholder' => 'Ne pas spécifier', // Ajout de l'option "Ne pas spécifier"
+                'required' => false, // Permettre une valeur nulle
             ])
         ;
     }

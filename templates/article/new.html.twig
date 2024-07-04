@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}Ajout d'un Article - Société Des Bières du Monde{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+<main class="container margebas">
+    <h1 class="mb-5 mt-5">Ajout d'un Article</h1>
 
     {{ include('article/_form.html.twig') }}
 
-    <a href="{{ path('app_article_index') }}">back to list</a>
+    <a class="btn btn-warning" href="{{ path('app_article_index') }}">Retourner à la liste</a>
+    </main>
 {% endblock %}
