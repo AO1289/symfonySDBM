@@ -1,41 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Articles - Société Des Bières du Monde
+{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-<a href="{{ path('app_article_new') }}">Create new</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prix_achat</th>
-                <th>Volume</th>
-                <th>Titrage</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.nom }}</td>
-                <td>{{ article.prixAchat }}</td>
-                <td>{{ article.volume }}</td>
-                <td>{{ article.titrage }}</td>
-                <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<main class="container margebas">
+		<h1 class="mt-5 mb-5">Gestion des Articles</h1>
+		<a class="btn btn-ajout" href="{{ path('app_article_new') }}">Ajouter</a>
+		<table class="table table-bordered table-article">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>Types</th>
+					<th>Marques</th>
+					<th>Couleurs</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for article in articles %}
+					<tr>
+						<td>{{ article.id }}</td>
+						<td>{{ article.nom }}</td>
 
-    
+						{% if article.type == NULL %}
+							<td>Type non connu</td>
+						{% else %}
+							<td>{{ article.type.nom }}</td>
+						{% endif %}
+
+						{% if article.marque == NULL %}
+							<td>Marque non connu</td>
+						{% else %}
+							<td>{{ article.marque.nom }}</td>
+						{% endif %}
+
+						{% if article.couleur == NULL %}
+							<td>Couleur non connu</td>
+						{% else %}
+							<td>{{ article.couleur.nom }}</td>
+						{% endif %}
+						<td>
+							<a class="btn btn-primary mb-2" href="{{ path('app_article_show', {'id': article.id}) }}">Voir</a>
+							<a class="btn btn-success mb-2" href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">Tableau vide</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</main>
 {% endblock %}

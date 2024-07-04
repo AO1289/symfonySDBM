@@ -3,9 +3,10 @@
 {% block title %}Marques - Société Des Bières du Monde{% endblock %}
 
 {% block body %}
-    <h1>Gestion</h1>
-
-    <table class="table">
+<main class="container margebas">
+    <h1 class="mt-5 mb-5">Gestion des Marques</h1>
+<a class="btn btn-ajout" href="{{ path('app_marque_new') }}">Ajouter</a>
+    <table class="table table-bordered table-marque">
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,17 +34,18 @@
                 {% endif %}
                 
                 <td>
-                    <a href="{{ path('app_marque_show', {'id': marque.id}) }}">Voir</a>
-                    <a href="{{ path('app_marque_edit', {'id': marque.id}) }}">Modifier</a>
+                    <a  class="btn btn-primary mb-2" href="{{ path('app_marque_show', {'id': marque.id}) }}">Voir</a>
+                    <a class="btn btn-success mb-2" href="{{ path('app_marque_edit', {'id': marque.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">tableau vide</td>
+                <td colspan="3">Tableau vide</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_marque_new') }}">Create new</a>
+    
+    </main>
 {% endblock %}

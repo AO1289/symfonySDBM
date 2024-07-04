@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Article{% endblock %}
+{% block title %}Modification d'un Article - Société Des Bières du Monde{% endblock %}
 
 {% block body %}
-    <h1>Edit Article</h1>
-
-    {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_article_index') }}">back to list</a>
-
+<main class="container margebas">
+    <h1 class="mb-5 mt-5">Modification d'un Article</h1>
+    {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
     {{ include('article/_delete_form.html.twig') }}
+    <a class="btn btn-warning mt-3" href="{{ path('app_article_index') }}">Retourner  à la liste</a>
+    </main>
 {% endblock %}

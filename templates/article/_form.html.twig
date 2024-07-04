@@ -1,4 +1,32 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="custom-form-group col">
+        {{ form_label(form.nom, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.nom, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.nom) }}
+
+        {{ form_label(form.prix_achat, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.prix_achat, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.prix_achat) }}
+
+        {{ form_label(form.volume, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.volume, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.volume) }}
+
+        {{ form_label(form.titrage, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.titrage, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.titrage) }}
+
+        {{ form_label(form.marque, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.marque, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.marque) }}
+
+        {{ form_label(form.couleur, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.couleur, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.couleur) }}
+
+        {{ form_label(form.type, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(form.type, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_errors(form.type) }}
+    </div>
+    <button class="btn btn-primary mb-2 mt-3">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(form) }}

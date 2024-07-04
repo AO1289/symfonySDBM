@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Marque{% endblock %}
+{% block title %}Ajout d'une Marque - Société Des Bières du Monde{% endblock %}
 
 {% block body %}
-    <h1>Create new Marque</h1>
+<main class="container vh-100">
+    <h1 class="mb-5 mt-5">Ajouter une Marque</h1>
 
     {{ include('marque/_form.html.twig') }}
 
-    <a href="{{ path('app_marque_index') }}">back to list</a>
+    <a class="btn btn-warning mt-3 " href="{{ path('app_marque_index') }}">Retourner à la liste</a>
+    </main>
 {% endblock %}
