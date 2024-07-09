@@ -4,7 +4,7 @@
     font-weight: 400;
 }
 
-nav {
+.navbar {
     background-color: #C3B18F !important;
     color: white;
 
@@ -23,7 +23,13 @@ footer {
     
     
 }
-
+.page-link {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 500;
+    color: #000000;
+    background-color: rgb(196, 196, 196);
+    border: 1px solid rgb(255, 255, 255);
+}
 .sdbm {
     color: grey !important;
     font-size: 18px;
