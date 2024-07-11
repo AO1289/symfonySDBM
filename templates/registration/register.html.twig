@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<main class="container margebas">
+<div class="card m-5 p-5">
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1 class="my-5">Inscription</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_label(registrationForm.email, null, {'label_attr': {'class': 'form-label'}}) }} :
+        {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control mb-3'}}) }}
+
+        {{ form_label(registrationForm.plainPassword, null, {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control mb-3'}}) }}
+
+        {{ form_row(registrationForm.RGPDConsent) }}
+
+        <button type="submit" class="btn btn-success">M'inscrire</button>
+         
+       
+    {{ form_end(registrationForm) }} 
+    <span class="sdbm mt-4">Vous possédez déjà un compte ?</span>
+    <a class="btn btn-primary col-md-2" href="{{ path('app_login') }}">Me connecter</a>
+    
+    </div>
+    </main>
+{% endblock %}
