@@ -6,6 +6,7 @@ use App\Entity\Marque;
 use App\Form\MarqueType;
 use App\Repository\MarqueRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,18 @@ use Symfony\Component\Routing\Attribute\Route;
 class MarqueController extends AbstractController
 {
     #[Route('/', name: 'app_marque_index', methods: ['GET'])]
-    public function index(MarqueRepository $marqueRepository): Response
+    public function index(MarqueRepository $marqueRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $queryBuilder = $marqueRepository->createQueryBuilder('a');
+
+        $pagination = $paginator->paginate(
+            $queryBuilder, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            20 /*limit per page*/
+        );
         return $this->render('marque/index.html.twig', [
             'marques' => $marqueRepository->findAll(),
+            'pagination' => $pagination,
         ]);
     }
 

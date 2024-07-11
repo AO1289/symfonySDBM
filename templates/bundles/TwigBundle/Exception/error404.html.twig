@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main class="container vh-100">
+    <h1 class="mt-5 mb-3">Page non trouvé</h1>
+
+    <p>
+        La page demandée n'a pas pu être localisée. Vérifiez qu'il n'y a pas de faute d'orthographe dans l'URL ou <a href="{{ path('app_main') }}">retourner à la page d'accueil</a>.
+    </p>
+    </main>
+{% endblock %}
